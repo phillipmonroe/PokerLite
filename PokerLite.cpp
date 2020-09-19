@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Card.cpp"
+#include "Hand.cpp"
 
 int main()
 {

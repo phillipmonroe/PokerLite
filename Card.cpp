@@ -9,16 +9,24 @@ public:
 		Diamonds = 'D',
 		Clubs = 'C'
 	};
-private:
-	Suit suit;
-	int value;
-public:
+
 	Card(int value, Suit suit)
 	{
-		this->suit = suit;
 		this->value = value;
+		this->suit = suit;
+	}
+	
+	Card()
+	{
+		value = A;
+		suit = Spades;
 	}
 
+private:
+	int value;
+	Suit suit;
+
+public:
 	int GetValue()
 	{
 		return value;
