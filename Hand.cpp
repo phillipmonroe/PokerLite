@@ -49,6 +49,33 @@ public:
 		{
 			return A;
 		}
+
+		if (hand[0].GetValue() >= hand[1].GetValue() && hand[0].GetValue() >= hand[2].GetValue()) {
+			return hand[0].GetValue();
+		}
+		else
+		{
+			if (hand[1].GetValue() >= hand[2].GetValue())
+			{
+				return hand[1].GetValue();
+			}
+			else
+			{
+				return hand[2].GetValue();
+			}
+		}
+	}
+
+	bool IsFlush()
+	{
+		if (hand[0].GetSuit() == hand[1].GetSuit() == hand[2].GetSuit())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 };
