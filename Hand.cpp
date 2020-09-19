@@ -45,35 +45,97 @@ public:
 
 	int HighCard() 
 	{
-		if (hand[0].GetValue() == A || hand[1].GetValue() == A || hand[2].GetValue() == A)
+		if (counter > 2)
 		{
-			return A;
-		}
-
-		if (hand[0].GetValue() >= hand[1].GetValue() && hand[0].GetValue() >= hand[2].GetValue()) {
-			return hand[0].GetValue();
-		}
-		else
-		{
-			if (hand[1].GetValue() >= hand[2].GetValue())
+			if (hand[0].GetValue() == A || hand[1].GetValue() == A || hand[2].GetValue() == A)
 			{
-				return hand[1].GetValue();
+				return A;
+			}
+
+			if (hand[0].GetValue() >= hand[1].GetValue() && hand[0].GetValue() >= hand[2].GetValue()) {
+				return hand[0].GetValue();
 			}
 			else
 			{
-				return hand[2].GetValue();
+				if (hand[1].GetValue() >= hand[2].GetValue())
+				{
+					return hand[1].GetValue();
+				}
+				else
+				{
+					return hand[2].GetValue();
+				}
 			}
+		}
+		else
+		{
+			std::cout << "[ERROR]: This hand is not full!";
+			return -1;
 		}
 	}
 
 	bool IsFlush()
 	{
-		if (hand[0].GetSuit() == hand[1].GetSuit() == hand[2].GetSuit())
+		if(counter > 2)
 		{
-			return true;
+			if (hand[0].GetSuit() == hand[1].GetSuit() == hand[2].GetSuit())
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 		else
 		{
+			std::cout << "[ERROR]: This hand is not full!";
+			return false;
+		}
+	}
+
+	bool IsStraight()
+	{
+		if (counter > 2)
+		{
+			// Check if in range
+			if (hand[1].GetValue() > (hand[0].GetValue() + 2) || hand[2].GetValue() > (hand[0].GetValue() + 2))
+			{
+				return false;
+			}
+			if (hand[1].GetValue() < (hand[0].GetValue() - 2) || hand[2].GetValue() < (hand[0].GetValue() - 2))
+			{
+				return false;
+			}
+
+			// Check not equal
+			if (hand[0].GetValue() == hand[1].GetValue() || hand[0].GetValue() == hand[2].GetValue() || hand[1].GetValue() == hand[2].GetValue())
+			{
+				return false;
+			}
+
+			if (hand[0].GetValue() > hand[1].GetValue() && hand[0].GetValue() > hand[2].GetValue())
+			{
+				return true;
+			}
+
+			if (hand[0].GetValue() < hand[1].GetValue() && hand[0].GetValue() < hand[2].GetValue())
+			{
+				return true;
+			}
+
+			if ((hand[1].GetValue() < (hand[0].GetValue() + 2) && hand[2].GetValue() > (hand[0].GetValue() - 2)) || (hand[1].GetValue() > (hand[0].GetValue() - 2) && hand[2].GetValue() < (hand[0].GetValue() + 2)))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			std::cout << "[ERROR]: This hand is not full!";
 			return false;
 		}
 	}
