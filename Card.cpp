@@ -10,7 +10,7 @@ public:
 		Clubs = 'C'
 	};
 
-	Card(int value, Suit suit)
+	Card(int value, enum Suit suit)
 	{
 		this->value = value;
 		this->suit = suit;
@@ -24,7 +24,7 @@ public:
 
 private:
 	int value;
-	Suit suit;
+	enum Suit suit;
 
 public:
 	int GetValue()
@@ -35,6 +35,18 @@ public:
 	Suit GetSuit()
 	{
 		return suit;
+	}
+
+	void Print()
+	{
+		if (value == A)
+		{
+			std::cout << "A of " << suit << "\n";
+		}
+		else
+		{
+			std::cout << value << " of " << suit << "\n";
+		}
 	}
 	
 };

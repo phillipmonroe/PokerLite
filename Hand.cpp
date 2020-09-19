@@ -1,8 +1,11 @@
+#include <string>
+
 class Hand 
 {
 private:
 	Card hand[3];
 	int counter;
+	std::string title;
 public:
 	Hand() 
 	{
@@ -78,7 +81,7 @@ public:
 	{
 		if(counter > 2)
 		{
-			if (hand[0].GetSuit() == hand[1].GetSuit() == hand[2].GetSuit())
+			if (hand[0].GetSuit() == hand[1].GetSuit() && hand[0].GetSuit() == hand[2].GetSuit())
 			{
 				return true;
 			}
@@ -144,6 +147,32 @@ public:
 		{
 			std::cout << "[ERROR]: This hand is not full!";
 			return false;
+		}
+	}
+
+	void SetTitle(std::string title)
+	{
+		this->title = title;
+	}
+	
+	std::string GetTitle()
+	{
+		return title;
+	}
+
+	void Print(std::string title)
+	{
+		SetTitle(title);
+		if (counter > 2)
+		{
+			std::cout << title << ":\n";
+			hand[0].Print();
+			hand[1].Print();
+			hand[2].Print();
+		}
+		else
+		{
+			std::cout << "[ERROR]: This hand is not full!";
 		}
 	}
 

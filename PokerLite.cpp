@@ -4,6 +4,9 @@
 
 int main()
 {
-    Card A_Spades(A, Card::Spades);
-    std::cout << "Hello World!\n" << A_Spades.GetValue() << A_Spades.GetSuit();
+    Card aceSpades(A, Card::Spades);
+    Card twoSpades(2, Card::Spades);
+    Card threeSpades(3, Card::Spades);
+    Hand one(aceSpades, twoSpades, threeSpades);
+    one.Print("Hand One");
 }
