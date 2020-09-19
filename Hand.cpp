@@ -98,7 +98,7 @@ public:
 	{
 		if (counter > 2)
 		{
-			// Check if in range
+			// Check if in range [n-2 ... n+2] (assuming n is value of hand[0]..referred to as 'first card' after this) 
 			if (hand[1].GetValue() > (hand[0].GetValue() + 2) || hand[2].GetValue() > (hand[0].GetValue() + 2))
 			{
 				return false;
@@ -108,28 +108,35 @@ public:
 				return false;
 			}
 
-			// Check not equal
+			// Check that the values are not equal
 			if (hand[0].GetValue() == hand[1].GetValue() || hand[0].GetValue() == hand[2].GetValue() || hand[1].GetValue() == hand[2].GetValue())
 			{
 				return false;
 			}
 
+			// Check if both are higher than first card
 			if (hand[0].GetValue() > hand[1].GetValue() && hand[0].GetValue() > hand[2].GetValue())
 			{
+				// n, n+1, n+2
 				return true;
 			}
 
+			// Check if both are lower than first card
 			if (hand[0].GetValue() < hand[1].GetValue() && hand[0].GetValue() < hand[2].GetValue())
 			{
+				// n-2, n-1, n
 				return true;
 			}
 
+			// Check if cards are 'sandwiching' first card without gaps
 			if ((hand[1].GetValue() < (hand[0].GetValue() + 2) && hand[2].GetValue() > (hand[0].GetValue() - 2)) || (hand[1].GetValue() > (hand[0].GetValue() - 2) && hand[2].GetValue() < (hand[0].GetValue() + 2)))
 			{
+				// n-1, n, n+1
 				return true;
 			}
 			else
 			{
+				// n-2, n, n+2
 				return false;
 			}
 		}
