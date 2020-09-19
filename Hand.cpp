@@ -39,7 +39,15 @@ public:
 		}
 		else
 		{
-			std::cout << "[ERROR]: This hand is already full!"
+			std::cout << "[ERROR]: This hand is already full!";
+		}
+	}
+
+	int HighCard() 
+	{
+		if (hand[0].GetValue() == A || hand[1].GetValue() == A || hand[2].GetValue() == A)
+		{
+			return A;
 		}
 	}
 
