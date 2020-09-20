@@ -1,5 +1,11 @@
 #include <string>
 
+/**
+* This Class represents a hand of 3 cards to be used
+* in PokerLite.
+* 
+* @author Phillip Monroe
+*/
 class Hand 
 {
 private:
@@ -7,17 +13,32 @@ private:
 	int counter;
 	std::string title;
 public:
+	/**
+	* Constructor for an empty hand of cards
+	*/
 	Hand() 
 	{
 		counter = 0;
 	}
 
+	/**
+	* Constructor for a hand of cards with one card
+	* 
+	* @param one
+	*	card to store in the hand
+	*/
 	Hand(Card one)
 	{
 		counter = 1;
 		hand[0] = one;
 	}
 
+	/**
+	* Constructor for a hand of cards with two card
+	* 
+	* @param one, two
+	*	card to store in the hand
+	*/
 	Hand(Card one, Card two)
 	{
 		counter = 2;
@@ -25,6 +46,12 @@ public:
 		hand[1] = two;
 	}
 
+	/**
+	* Constructor for a hand of cards with three card
+	* 
+	* @param one, two, three
+	*	card to store in the hand
+	*/
 	Hand(Card one, Card two, Card three)
 	{
 		counter = 3;
@@ -33,6 +60,12 @@ public:
 		hand[2] = three;
 	}
 
+	/**
+	* Adds a card to the hand if it is not full
+	* 
+	* @param card
+	*	card to add to the hand
+	*/
 	void AddCard(Card card)
 	{
 		if (counter <= 2)
@@ -46,6 +79,11 @@ public:
 		}
 	}
 
+	/**
+	* Finds the card with the highest value in the hand
+	* 
+	* @return value of the highest card
+	*/
 	int HighCard() 
 	{
 		if (counter > 2)
@@ -77,6 +115,11 @@ public:
 		}
 	}
 
+	/**
+	* Finds if the hand contains a flush
+	* 
+	* @return bool indicating if the hand has a flush
+	*/
 	bool IsFlush()
 	{
 		if(counter > 2)
@@ -97,6 +140,11 @@ public:
 		}
 	}
 
+	/**
+	* Finds if the hand contains a straight
+	*
+	* @return bool indicating if the hand has a straight
+	*/
 	bool IsStraight()
 	{
 		if (counter > 2)
@@ -150,6 +198,11 @@ public:
 		}
 	}
 
+	/**
+	* Finds if the hand contains a pair
+	*
+	* @return value of the pair or 0 if there is no pair
+	*/
 	int HasPair()
 	{
 		if (hand[0].GetValue() == hand[1].GetValue())
@@ -170,16 +223,33 @@ public:
 		return 0;
 	}
 
+	/**
+	* Sets the title of the hand
+	* 
+	* @param title
+	*	the title to give the hand
+	*/
 	void SetTitle(std::string title)
 	{
 		this->title = title;
 	}
 	
+	/**
+	* Gets the title of the hand
+	* 
+	* @return the title of the hand
+	*/
 	std::string GetTitle()
 	{
 		return title;
 	}
 
+	/**
+	* Prints the contents of the hand
+	* 
+	* @param title
+	*	title to give the hand
+	*/
 	void Print(std::string title)
 	{
 		SetTitle(title);
@@ -195,5 +265,4 @@ public:
 			std::cout << "[ERROR]: This hand is not full!";
 		}
 	}
-
 };

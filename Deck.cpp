@@ -1,3 +1,10 @@
+/**
+* This file contains all possible cards that would be
+* used in a game of PokerLite.
+* 
+* @author Phillip Monroe
+*/
+
 Card aceSpades(A, Card::Spades);
 Card twoSpades(2, Card::Spades);
 Card threeSpades(3, Card::Spades);
