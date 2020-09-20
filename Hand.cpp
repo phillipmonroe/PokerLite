@@ -150,6 +150,26 @@ public:
 		}
 	}
 
+	int HasPair()
+	{
+		if (hand[0].GetValue() == hand[1].GetValue())
+		{
+			return hand[0].GetValue();
+		}
+
+		if (hand[0].GetValue() == hand[2].GetValue())
+		{
+			return hand[0].GetValue();
+		}
+
+		if (hand[1].GetValue() == hand[2].GetValue())
+		{
+			return hand[1].GetValue()
+		}
+
+		return 0;
+	}
+
 	void SetTitle(std::string title)
 	{
 		this->title = title;
