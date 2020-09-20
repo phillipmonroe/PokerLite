@@ -164,7 +164,7 @@ public:
 
 		if (hand[1].GetValue() == hand[2].GetValue())
 		{
-			return hand[1].GetValue()
+			return hand[1].GetValue();
 		}
 
 		return 0;
