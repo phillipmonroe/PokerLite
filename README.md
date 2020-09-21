@@ -2,7 +2,7 @@
 **Author**: Phillip Monroe
 
 ## Download
-A compile .exe can be found on my [GitHub](https://github.com/phillipmonroe/PokerLite/releases)
+PokerLite.exe can be found on my [GitHub](https://github.com/phillipmonroe/PokerLite/releases)
 
 ## Summary/Rules
 The game of Pokerlite is just like Poker, but with some parts removed. It uses a
