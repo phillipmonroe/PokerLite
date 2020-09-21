@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include "Card.cpp"
 #include "Hand.cpp"
 #include "Deck.cpp"
@@ -229,4 +230,7 @@ int main()
     std::cout << lowCard1.GetTitle() << " vs. " << lowCard2.GetTitle() << "\n";
     FindWinner(lowCard1, lowCard2);                  // Expected Winner: Tie
     std::cout << "\n";
+
+    std::cout << "Press enter to exit...";
+    std::getchar();
 }
