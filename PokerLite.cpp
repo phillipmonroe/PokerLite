@@ -108,9 +108,9 @@ void FindWinner(Hand first, Hand second)
             std::cout << second.GetTitle() << " wins!\n"; // second is straight
         }
     }
-    else if (first.HasPair() || second.HasPair())
+    else if (first.HasPair() || second.HasPair()) // there is a pair
     {
-        if (first.HasPair() && second.HasPair()) 
+        if (first.HasPair() && second.HasPair()) // both are pairs so find highest value pair
         {
             if (first.HasPair() > second.HasPair())
             {
@@ -135,18 +135,18 @@ void FindWinner(Hand first, Hand second)
                 }
             }
         }
-        else if (first.HasPair())
+        else if (first.HasPair()) // first is pair
         {
             std::cout << first.GetTitle() << " wins!\n";
         }
-        else
+        else // second is pair
         {
             std::cout << second.GetTitle() << " wins!\n";
         }
     }
     else
     {
-        FindHigher(first, second);
+        FindHigher(first, second); // no special hands so just find highest card
     }
 }
 
