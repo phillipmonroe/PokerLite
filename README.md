@@ -1,6 +1,9 @@
 # PokerLite
 **Author**: Phillip Monroe
 
+## Download
+A compile .exe can be found on my [GitHub](https://github.com/phillipmonroe/PokerLite/releases)
+
 ## Summary/Rules
 The game of Pokerlite is just like Poker, but with some parts removed. It uses a
 standard card deck, but only the ranks of Aces, and 2 through 9s, of all four
